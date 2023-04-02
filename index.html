@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <title>HFT IPR Authentication mit Auth0</title>
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-background-image="https://media.giphy.com/media/3o85xnUJ8HL4OGDyjS/giphy.gif">
+        <h1 class="title">IPR</h1>
+        <h3 class="title">Marrying Frontend and Backend</h3>
+      </section>
+
+      <!-- Express handlers Backend Testing-->
+      <section>
+        <section data-auto-animate data-background-size="cover"
+          data-background-image="https://media.giphy.com/media/d3mmdNnW5hkoUxTG/giphy.gif">
+          <h3 class="title">Express Handler</h3>
+        </section>
+        <section data-auto-animate>
+          <h3>jest.setup.js</h3>
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            import "dotenv/config";
+            import knex from "./src/config/knex";
+            
+            beforeAll(() => {
+              global.app = require("./src/config/express").default;
+            });
+            afterAll(async () => {
+              knex.destroy();
+            });
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          <h3>story.create.spec.js</h3>
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            import request from "supertest";
+            import knex from "../../config/knex";
+
+            describe("Story Create Route", () => {
+              beforeAll(async () => {
+                await knex("story").del();
+              });
+
+              it("/story POST should create a new story", async () => {
+                const response = await request(global.app).post("/story").send({ title: "test", imageUrl: "test url" });
+
+                expect(response.status).toBe(200);
+                expect(response.body).toMatchObject({ title: "test", imageUrl: "test url" });
+              });
+            });
+
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          <h3>Validation</h3>
+          <pre><code class="bash" data-trim data-noescape data-line-numbers><script type="text/template">
+            npm i joi express-joi-validation
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          <h3>story.routes.js</h3>
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            import { Router } from "express";
+            import { getStories, getStory, createStory } from "./story.handler";
+            import { createValidator } from "express-joi-validation";
+            import { createStoryValidation } from "./story.validation";
+
+            const validator = createValidator();
+            const router = Router();
+
+            router.route("/").get(getStories).post(validator.body(createStoryValidation), createStory);
+            router.route("/:uuid").get(getStory);
+
+            export default router;
+
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          <h3>story.validation.js</h3>
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            import Joi from "joi";
+
+            export const createStoryValidation = Joi.object({
+              title: Joi.string().required(),
+              imageUrl: Joi.string().required(),
+            });
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          <h3>story.repository.js</h3>
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            import httpStatus from "http-status";
+            import ApiError from "../exception/ApiError";
+            import PostgresDataSource from "../postgres.datasource";
+            import { v4 as uuid } from "uuid";
+            
+            const storyColums = ["id", "uuid", "title", "imageUrl", "created_at", "updated_at"];
+            
+            export default class StoryRepository extends PostgresDataSource {
+              tableName = "story";
+            
+              async getStories() {
+                const stories = await this.knex(this.tableName).select(storyColums);
+            
+                return stories;
+              }
+            
+              async getStory(uuid) {
+                const story = await this.knex(this.tableName).select(storyColums).where({ uuid }).first();
+            
+                if (!story) {
+                  throw new ApiError(`Story with '${uuid}' does not exist`, httpStatus.NOT_FOUND);
+                }
+            
+                return story;
+              }
+            
+              async createStory({ title, imageUrl }) {
+                return await this.knex(this.tableName).insert({ uuid: uuid(), title, imageUrl }).returning(storyColums);
+              }
+            }
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          <h3>story.handler.js</h3>
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            import StoryRepository from "./story.repository";
+            import consola from "consola";
+
+            export async function createStory(req, res, next) {
+              try {
+                const storyRepository = new StoryRepository();
+                const { title, imageUrl } = req.body;
+                const story = await storyRepository.createStory({ title, imageUrl });
+                story.map((u) => delete u.id);
+
+                res.json(story[0]);
+              } catch (err) {
+                consola.error(err);
+                next(err);
+              }
+            }
+          </script></code></pre>
+        </section>
+      </section>
+
+      <!-- Frontend Tests / Mocking -->
+      <section>
+        <section data-auto-animate data-background-size="cover"
+          data-background-image="https://media.giphy.com/media/CxZBDpNYR7e22FDMhK/giphy.gif">
+          <h3 class="title">Frontend Tests & Mocks</h3>
+        </section>
+        <section data-auto-animate>
+          Testing Views
+        </section>
+        <section data-auto-animate>
+          Testing Forms
+        </section>
+      </section>
+
+      <!-- Frontend Tests hooks -->
+      <section>
+        <section data-auto-animate data-background-size="cover"
+          data-background-image="https://media.giphy.com/media/9p8hgZoQjj9y8/giphy.gif">
+          <h3 class="title">Business Logik | Hooks</h3>
+        </section>
+        <section data-auto-animate>
+          Custom Hooks
+        </section>
+        <section data-auto-animate>
+          Testing Custom Hooks
+        </section>
+      </section>
+
+      <section>
+        <h3>Links</h3>
+        <ul>
+
+          <li>
+            <a href="https://github.com/maciossek/crap-stories-node/tree/feature/auth0">Backend Repo</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>
