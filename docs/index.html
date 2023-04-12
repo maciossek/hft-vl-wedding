@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
 
-  <title>HFT IPR Authentication mit Auth0</title>
+  <title>HFT IPR Frondend Backend Comms</title>
 
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -19,6 +19,189 @@
       <section data-background-image="https://media.giphy.com/media/3o85xnUJ8HL4OGDyjS/giphy.gif">
         <h1 class="title">IPR</h1>
         <h3 class="title">Marrying Frontend and Backend</h3>
+      </section>
+
+      <!-- Tests -->
+      <section>
+        <section data-auto-animate data-background-size="cover"
+          data-background-image="https://media.giphy.com/media/xT1XGWGd90BrYwnTl6/giphy.gif">
+          <h3 class="title">Tests</h3>
+        </section>
+        <section data-auto-animate>
+          <h3>Tests</h3>
+          <ul>
+            <li class="fragment">Korrektheit überprüfen</li>
+            <li class="fragment">Anforderungen Validieren</li>
+            <li class="fragment">Regressionen verhindern</li>
+            <li class="fragment">Refactoring erleichtern</li>
+            <li class="fragment">Codequalität verbessern</li>
+            <li class="fragment">Dokumentation</li>
+            <li class="fragment">Entwicklung beschleunigen</li>
+            <li class="fragment">Zusammenarbeit vereinfachen</li>
+            <li class="fragment">Vertrauen erhöhen</li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3>Unit Tests</h3>
+          <blockquote>
+            Unit-Tests überprüfen die Funktionalität einzelner Komponenten oder Funktionen unabhängig voneinander. Sie
+            sind in der Regel klein, schnell und einfach zu schreiben und auszuführen. Unit-Tests sind ideal, um
+            Probleme auf der niedrigsten Ebene des Codes zu identifizieren.
+          </blockquote>
+        </section>
+        <section data-auto-animate>
+          <h3>Integrationstests</h3>
+          <blockquote>
+            Integrationstests konzentrieren sich auf die Interaktion zwischen verschiedenen Komponenten oder Modulen der
+            Anwendung. Sie stellen sicher, dass die Teile der Software korrekt zusammenarbeiten und helfen, Probleme bei
+            der Integration von Komponenten aufzudecken.
+          </blockquote>
+        </section>
+        <section data-auto-animate>
+          <h3>Systemtests</h3>
+          <blockquote>
+            Systemtests überprüfen die gesamte Anwendung als Ganzes, um sicherzustellen, dass alle Komponenten korrekt
+            zusammenarbeiten und die Anwendung die gewünschten Funktionen und Anforderungen erfüllt. Diese Tests sind in
+            der Regel umfangreicher und zeitaufwändiger als Unit- oder Integrationstests.
+          </blockquote>
+        </section>
+        <section data-auto-animate>
+          <h3>Akzeptanztests</h3>
+          <blockquote>
+            Akzeptanztests (auch als Benutzertests bekannt) evaluieren, ob die Software die Erwartungen und
+            Anforderungen der Endbenutzer und Stakeholder erfüllt. Diese Tests werden normalerweise von Personen
+            durchgeführt, die die Rolle des Endbenutzers einnehmen oder in enger Zusammenarbeit mit ihnen stehen.
+          </blockquote>
+        </section>
+        <section data-auto-animate>
+          <h3>Regressionstests</h3>
+          <blockquote>
+            Regressionstests stellen sicher, dass Änderungen am Code keine unbeabsichtigten Auswirkungen auf bestehende
+            Funktionen haben. Diese Tests werden durchgeführt, um die Stabilität der Software bei Codeänderungen,
+            Bugfixes oder neuen Funktionen zu gewährleisten.
+          </blockquote>
+        </section>
+        <section data-auto-animate>
+          <h3>Lasttests</h3>
+          <blockquote>
+            Lasttests untersuchen das Verhalten der Anwendung unter verschiedenen Lastbedingungen, z. B. bei hoher
+            Benutzerzahl, hoher Dateneingabe oder hohem Netzwerkverkehr. Sie stellen sicher, dass die Anwendung auch
+            unter Stress stabil und zuverlässig bleibt.
+          </blockquote>
+        </section>
+        <section data-auto-animate>
+          <h3>Performancetests</h3>
+          <blockquote>
+            Performancetests messen die Leistungsfähigkeit der Software, z. B. Antwortzeiten, Latenzen und Durchsatz, um
+            sicherzustellen, dass sie die Leistungsanforderungen erfüllt.
+          </blockquote>
+        </section>
+        <section data-auto-animate>
+          <h3>Sicherheitstests</h3>
+          <blockquote>
+            Sicherheitstests überprüfen die Anwendung auf Schwachstellen und Sicherheitslücken, die von Angreifern
+            ausgenutzt werden könnten. Sie stellen sicher, dass die Anwendung die Daten und den Zugriff der Benutzer
+            angemessen schützt.
+          </blockquote>
+        </section>
+        <section data-auto-animate>
+          <h3>Usability-Tests</h3>
+          <blockquote>
+            Usability-Tests beurteilen die Benutzerfreundlichkeit der Anwendung aus Sicht des Endbenutzers. Sie helfen
+            Entwicklern, Probleme mit der Benutzeroberfläche, der Navigation oder der allgemeinen Benutzererfahrung zu
+            identifizieren und zu beheben.
+          </blockquote>
+        </section>
+      </section>
+
+      <!-- Code Coverage -->
+      <section>
+        <section data-auto-animate data-background-size="cover"
+          data-background-image="https://media.giphy.com/media/MaXOUjkV73aO4/giphy.gif">
+          <h3 class="title">Code Coverage</h3>
+        </section>
+        <section data-auto-animate>
+          package.json
+          <pre><code class="js" data-trim data-noescape data-line-numbers="25, 45-59"><script type="text/template">
+            {
+              "name": "story-crapper",
+              "version": "0.1.0",
+              "private": true,
+              "dependencies": {
+                "@emotion/react": "11.10.6",
+                "@emotion/styled": "11.10.6",
+                "antd": "5.3.3",
+                "antd-dayjs-webpack-plugin": "1.0.6",
+                "react": "18.2.0",
+                "react-dom": "18.2.0",
+                "react-router-dom": "6.10.0",
+                "react-scripts": "5.0.1",
+                "web-vitals": "3.3.0"
+              },
+              "devDependencies": {
+                "@testing-library/jest-dom": "5.16.5",
+                "@testing-library/react": "14.0.0",
+                "@testing-library/user-event": "14.4.3"
+              },
+              "scripts": {
+                "start": "react-scripts start",
+                "build": "react-scripts build",
+                "test": "react-scripts test",
+                "test:ci": "react-scripts test --coverage  --watchAll=false"
+              },
+              "eslintConfig": {
+                "extends": [
+                  "react-app",
+                  "react-app/jest"
+                ]
+              },
+              "browserslist": {
+                "production": [
+                  ">0.2%",
+                  "not dead",
+                  "not op_mini all"
+                ],
+                "development": [
+                  "last 1 chrome version",
+                  "last 1 firefox version",
+                  "last 1 safari version"
+                ]
+              },
+              "jest": {
+                "coverageThreshold": {
+                  "global": {
+                    "branches": 75,
+                    "functions": 75,
+                    "lines": 75,
+                    "statements": 75
+                  }
+                },
+                "coverageReporters": [
+                  "cobertura",
+                  "json",
+                  "lcov",
+                  "text"
+                ]
+              }
+            }                        
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          Dateien ignorieren
+          <pre><code class="js" data-trim data-noescape data-line-numbers="1"><script type="text/template">
+            /* istanbul ignore file */
+            import { ThemeProvider } from "@emotion/react";
+            import React from "react";
+            import { BrowserRouter } from "react-router-dom";
+            import defaultTheme from "./themes/default";
+            
+            export const AllProviders = ({ children }) => (
+              <ThemeProvider theme={defaultTheme}>
+                <BrowserRouter>{children}</BrowserRouter>
+              </ThemeProvider>
+            );            
+            </script></code></pre>
+        </section>
       </section>
 
       <!-- Express handlers Backend Testing-->
@@ -163,9 +346,170 @@
         </section>
         <section data-auto-animate>
           Testing Views
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            import { render, screen } from "@testing-library/react";
+            import HomeView from "../HomeView";
+            import { AllProviders } from "../../../testUtils";
+
+            describe("HomeView", () => {
+              it("Should render a headline", () => {
+                render(
+                  <AllProviders>
+                    <HomeView />
+                  </AllProviders>
+                );
+                const headline = screen.getByText(/This is a story/i);
+                expect(headline).toBeInTheDocument();
+              });
+            });
+            </script></code></pre>
         </section>
         <section data-auto-animate>
-          Testing Forms
+          testUtils.js
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            /* istanbul ignore file */
+            import { ThemeProvider } from "@emotion/react";
+            import { ConfigProvider } from "antd";
+            import React from "react";
+            import { BrowserRouter } from "react-router-dom";
+            import defaultTheme from "./themes/default";
+
+            export const AllProviders = ({ children }) => (
+              <ConfigProvider
+                theme={{
+                  token: {
+                    colorPrimary: defaultTheme.colors.primary500,
+                  },
+                }}
+              >
+                <ThemeProvider theme={defaultTheme}>
+                  <BrowserRouter>{children}</BrowserRouter>
+                </ThemeProvider>
+              </ConfigProvider>
+            );
+            </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          Testing Forms (Arrange)
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            import { render, screen } from "@testing-library/react";
+            import userEvent from "@testing-library/user-event";
+            import { AllProviders } from "../../../testUtils";
+            import HomeCreateView from "../HomeCreateView";
+
+            jest.mock("async-validator");
+
+            describe("HomeCreateView", () => {
+              it("should show a success message", async () => {
+                render(
+                  <AllProviders>
+                    <HomeCreateView />
+                  </AllProviders>
+                );
+              });
+            });
+
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          Testing Forms (Arrange)
+          <pre><code class="js" data-trim data-noescape data-line-numbers="16-22"><script type="text/template">
+            import { render, screen } from "@testing-library/react";
+            import userEvent from "@testing-library/user-event";
+            import { AllProviders } from "../../../testUtils";
+            import HomeCreateView from "../HomeCreateView";
+
+            jest.mock("async-validator");
+
+            describe("HomeCreateView", () => {
+              it("should show a success message", async () => {
+                render(
+                  <AllProviders>
+                    <HomeCreateView />
+                  </AllProviders>
+                );
+
+                const fileInput = await screen.findByTestId("drop");
+                const file = new File(["(⌐□_□)"], "chucknorris.png", { type: ".glb" });
+                await userEvent.upload(fileInput, file);
+                const titleField = await screen.findByLabelText("Title");
+                const submitButton = await screen.findByRole("button", {
+                  name: /Add this story/i,
+                });
+
+              });
+            });
+
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          Testing Forms (Arrage)
+          <pre><code class="js" data-trim data-noescape data-line-numbers="24,25"><script type="text/template">
+            import { render, screen } from "@testing-library/react";
+            import userEvent from "@testing-library/user-event";
+            import { AllProviders } from "../../../testUtils";
+            import HomeCreateView from "../HomeCreateView";
+
+            jest.mock("async-validator");
+
+            describe("HomeCreateView", () => {
+              it("should show a success message", async () => {
+                render(
+                  <AllProviders>
+                    <HomeCreateView />
+                  </AllProviders>
+                );
+
+                const fileInput = await screen.findByTestId("drop");
+                const file = new File(["(⌐□_□)"], "chucknorris.png", { type: ".glb" });
+                await userEvent.upload(fileInput, file);
+                const titleField = await screen.findByLabelText("Title");
+                const submitButton = await screen.findByRole("button", {
+                  name: /Add this story/i,
+                });
+
+                userEvent.type(titleField, "sth");
+                userEvent.click(submitButton);
+              });
+            });
+
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          Testing Forms (Act)
+          <pre><code class="js" data-trim data-noescape data-line-numbers="27,28"><script type="text/template">
+            import { render, screen } from "@testing-library/react";
+            import userEvent from "@testing-library/user-event";
+            import { AllProviders } from "../../../testUtils";
+            import HomeCreateView from "../HomeCreateView";
+
+            jest.mock("async-validator");
+
+            describe("HomeCreateView", () => {
+              it("should show a success message", async () => {
+                render(
+                  <AllProviders>
+                    <HomeCreateView />
+                  </AllProviders>
+                );
+
+                const fileInput = await screen.findByTestId("drop");
+                const file = new File(["(⌐□_□)"], "chucknorris.png", { type: ".png" });
+                await userEvent.upload(fileInput, file);
+                const titleField = await screen.findByLabelText("Title");
+                const submitButton = await screen.findByRole("button", {
+                  name: /Add this story/i,
+                });
+
+                userEvent.type(titleField, "sth");
+                userEvent.click(submitButton);
+
+                const text = await screen.findByText(/Story created!/i);
+                expect(text).toBeInTheDocument();
+              });
+            });
+
+          </script></code></pre>
         </section>
       </section>
 
@@ -177,9 +521,324 @@
         </section>
         <section data-auto-animate>
           Custom Hooks
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            import { useState } from "react";
+
+            export default function useStory() {
+              const [loading, setLoading] = useState(false);
+
+              return {
+                operations: {},
+                state: { loading },
+              };
+            }
+          </script></code></pre>
         </section>
         <section data-auto-animate>
           Testing Custom Hooks
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            import { renderHook } from "@testing-library/react";
+            import { AllProviders } from "../../../../testUtils";
+            import useStory from "../useStory";
+            
+            describe("useStory", () => {
+              it("should have a loading prop", async () => {
+                const wrapper = ({ children }) => <AllProviders>{children}</AllProviders>;
+                const { result } = renderHook(() => useStory(), { wrapper });
+            
+                expect(result.current.state.loading).toBeFalsy();
+              });
+            });            
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          Testing Custom Hooks
+          <pre><code class="js" data-trim data-noescape data-line-numbers="19-30"><script type="text/template">
+            import { renderHook, waitFor } from "@testing-library/react";
+            import { AllProviders } from "../../../../testUtils";
+            import useStory from "../useStory";
+
+            const mockStory = {
+              title: "This is a story",
+              description:
+                " Someone like you. Someone who'll rattle the cages. Swear to me! Swear to me! Does it come in black? I'm Batman Bruce Wayne, eccentric billionaire. I seek the means to fight injustice. To turn fear against those who prey on the fearful.",
+            };
+
+            describe("useStory", () => {
+              it("have a loading prop", async () => {
+                const wrapper = ({ children }) => <AllProviders>{children}</AllProviders>;
+                const { result } = renderHook(() => useStory(), { wrapper });
+
+                expect(result.current.state.loading).toBeFalsy();
+              });
+
+              it("should call the API", async () => {
+                const wrapper = ({ children }) => <AllProviders>{children}</AllProviders>;
+                const { result } = renderHook(() => useStory(), { wrapper });
+
+                await waitFor(async () => {
+                  await expect(result.current.operations.getRandomStory()).resolves.toEqual(
+                    mockStory
+                  );
+                });
+              });
+            });
+
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          useStory.js
+          <pre><code class="js" data-trim data-noescape data-line-numbers="6-12"><script type="text/template">
+            import { useState } from "react";
+
+            export default function useStory() {
+              const [loading, setLoading] = useState(false);
+
+              const getRandomStory = async () => {
+                setLoading(true);
+                const response = await fetch("http://localhost:3001/story/random");
+                const data = await response.json();
+                setLoading(false);
+                return data;
+              };
+
+              return {
+                operations: { getRandomStory },
+                state: { loading },
+              };
+            }
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          Umgebungsvariablen müssen mit <strong>REACT_APP</strong> beginnen
+          <pre><code class="js" data-trim data-noescape data-line-numbers="1"><script type="text/template">
+            REACT_APP_API_ENDPOINT=http://localhost:3001
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          env.js (src/config)
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            /* istanbul ignore file */
+            const envConfig = {
+              COMMIT_HASH: process.env.REACT_APP_COMMIT_HASH || "",
+              NODE_ENV: process.env.NODE_ENV || "",
+              API_ENDPOINT: process.env.REACT_APP_API_ENDPOINT || "",
+            };
+
+            export const isDev = envConfig.NODE_ENV === "development";
+            export const isTest = envConfig.NODE_ENV === "test";
+            export const isProd = envConfig.NODE_ENV === "production";
+
+            const baseUrlArray = envConfig.API_ENDPOINT.split("/");
+            export const baseUrl = `${baseUrlArray[0]}//${baseUrlArray[2]}`;
+
+            export default envConfig;
+
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          setupTests.js
+          <pre><code class="js" data-trim data-noescape data-line-numbers="19-30"><script type="text/template">
+            import "@testing-library/jest-dom";
+            import { setupServer } from "msw/node";
+            import defaultHandlers from "../mockdata/mockRequests";
+
+            global.matchMedia =
+              global.matchMedia ||
+              function () {
+                return {
+                  addListener: jest.fn(),
+                  removeListener: jest.fn(),
+                };
+              };
+
+            global.server = setupServer(...defaultHandlers);
+
+            beforeAll(() => global.server.listen());
+            afterEach(() => global.server.resetHandlers());
+            afterAll(() => global.server.close());
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          Mocked Service Worker (npm i -D msw)
+          <pre><code class="js" data-trim data-noescape data-line-numbers="19-30"><script type="text/template">
+            import { rest, graphql } from "msw";
+            import mockStories from "./stories.json";
+            import env from "../src/config/env";
+
+            const storyHandlers = [
+              rest.get(`${env.API_ENDPOINT}/story/random`, (req, res, ctx) => {
+                return res(ctx.json(mockStories[0]));
+              }),
+            ];
+
+            export const defaultHandlers = [...storyHandlers];
+
+            export default defaultHandlers;
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          Mocked Service Worker overrides
+          <pre><code class="js" data-trim data-noescape data-line-numbers="19-30"><script type="text/template">
+            it("display an error if stories can't be fetched", async () => {
+              global.server.use(
+                rest.get(`${env.API_ENDPOINT}/story/random`, (req, res, ctx) => {
+                  return res(
+                    ctx.status(500), ctx.json({ message: "Internal Server Error" })
+                  );
+                })
+              );
+          
+              const wrapper = ({ children }) => <AllProviders>{children}</AllProviders>;
+              const { result } = renderHook(() => useStory(), { wrapper });
+          
+              await act(async () => {
+                await expect(result.current.operations.getRandomStory()).rejects.toEqual(
+                  Error("wat")
+                );
+              });
+            });
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          useStory.js
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            import { useState } from "react";
+            import env from "../../../config/env";
+
+            export default function useStory() {
+              const [randomStory, setRandomStory] = useState();
+              const [loading, setLoading] = useState(true);
+
+              const getRandomStory = async () => {
+                console.log("getRandomStory");
+                setLoading(true);
+                const response = await fetch(`${env.API_ENDPOINT}/story/random`);
+
+                if (!response.ok) {
+                  throw Error("wat");
+                }
+
+                const data = await response.json();
+                setLoading(false);
+                setRandomStory(data);
+              };
+
+              return {
+                operations: { getRandomStory },
+                state: { loading, randomStory },
+              };
+            }
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          useStory.spec.js
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            import { renderHook, act } from "@testing-library/react";
+            import { AllProviders } from "../../../../testUtils";
+            import useStory from "../useStory";
+            import mockStories from "../../../../../mockdata/stories.json";
+            import { rest } from "msw";
+            import env from "../../../../config/env";
+
+            describe("useStory", () => {
+              it("have a loading prop", async () => {
+                const wrapper = ({ children }) => <AllProviders>{children}</AllProviders>;
+                const { result } = renderHook(() => useStory(), { wrapper });
+
+                expect(result.current.state.loading).toBeTruthy();
+              });
+
+              it("should get a random story", async () => {
+                const wrapper = ({ children }) => <AllProviders>{children}</AllProviders>;
+                const { result } = renderHook(() => useStory(), { wrapper });
+
+                await act(async () => {
+                  await result.current.operations.getRandomStory();
+                  // await expect(result.current.operations.getRandomStory()).resolves.toEqual(
+                  //   mockStories[0]
+                  // );
+                });
+
+                expect(result.current.state.randomStory).toEqual(mockStories[0]);
+              });
+
+              it("display an error if stories can't be fetched", async () => {
+                global.server.use(
+                  rest.get(`${env.API_ENDPOINT}/story/random`, (req, res, ctx) =>
+                    res(ctx.status(500), ctx.json({ message: "Internal Server Error" }))
+                  )
+                );
+
+                const wrapper = ({ children }) => <AllProviders>{children}</AllProviders>;
+                const { result } = renderHook(() => useStory(), { wrapper });
+
+                await act(async () => {
+                  await expect(result.current.operations.getRandomStory()).rejects.toEqual(
+                    Error("wat")
+                  );
+                });
+              });
+            });
+
+          </script></code></pre>
+        </section>
+        <section data-auto-animate>
+          HomeView.js
+          <pre><code class="js" data-trim data-noescape data-line-numbers><script type="text/template">
+            import styled from "@emotion/styled";
+            import { Button, Space } from "antd";
+            import { useEffect } from "react";
+            import { Link } from "react-router-dom";
+            import { RouteName } from "../../routes/routesnames";
+            import Story from "./components/Story";
+            import useStory from "./components/useStory";
+
+            const StoryContainer = styled.div`
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              > div {
+                margin: 1rem;
+              }
+            `;
+
+            export default function HomeView() {
+              const { state, operations } = useStory();
+
+              const handleClick = async () => {
+                await operations.getRandomStory();
+              };
+
+              useEffect(() => {
+                if (state.loading && !state.randomStory) {
+                  debugger;
+                  operations.getRandomStory();
+                }
+                console.log("use");
+              }, [state, operations]);
+
+              return (
+                <StoryContainer>
+                  <Story story={state.randomStory ?? {}} />
+                  <div style={{ marginTop: "30px" }}>
+                    <Space align="center">
+                      <Button type="primary" onClick={handleClick}>
+                        show me another one
+                      </Button>
+                      <span>or</span>
+                      <Link to={`${RouteName.HOME}/create`}>
+                        <Button type="primary">add one yourself</Button>
+                      </Link>
+                    </Space>
+                  </div>
+                </StoryContainer>
+              );
+            }
+
+
+          </script></code></pre>
         </section>
       </section>
 
